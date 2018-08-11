@@ -14,7 +14,7 @@
 table {
 	width: 80%;
     border-spacing: 5px;
-    background-color: #7D8279;
+    background-color: #CBD1DC;
 }
 
 body {
@@ -23,7 +23,7 @@ body {
 	width: 100%;
 	height: 100%;
 	margin: 0;
-	background-color: #7D8279;
+	background-color: #CBD1DC;
 	font-family: 'Roboto', sans-serif;
 }
 </style>
