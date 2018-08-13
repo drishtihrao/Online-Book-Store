@@ -6,30 +6,32 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Cart List</title>
-<style type="text/css">
+<style type="text/css" colour="white">
 * {
-	
 	box-sizing: border-box;
+	text-color: white;
 }
+
 table {
 	width: 80%;
-    border-spacing: 5px;
-    background-color: #CBD1DC;
+	border-spacing: 5px;
+	border-collapse: collapse;
+}
+
+th, td {
+	text-align: left;
+	padding: 8px;
 }
 
 body {
-
-	padding: 10px;
-	width: 100%;
-	height: 100%;
-	margin: 0;
-	background-color: #CBD1DC;
+	font-weight: bold;
+	color: black;
+	background-repeat: no-repeat, repeat;
 	font-family: 'Roboto', sans-serif;
 }
-
 </style>
 </head>
-<body>
+<body background="img/Bookshelf.png">
 	<div align="right">
 		<a href="cart.app"></a>()
 	</div>
@@ -74,7 +76,7 @@ body {
 
 
 
-										<td style="display: none;" >€</td>
+										<td style="display: none;">€</td>
 										<td class="text-right">Rs.
 											${addedbooks.price*addedbooks.bookCount}</td>
 										<jstl:set var="amount"
@@ -86,8 +88,8 @@ body {
 
 
 									</tr>
+									<!-- Calculating the total price of each item and the overall cost -->
 								</jstl:forEach>
-							
 								<tr>
 									<td></td>
 									<td></td>
@@ -98,24 +100,26 @@ body {
 									<td class="text-right"><strong>Rs. ${amount}</strong></td>
 									<td></td>
 								</tr>
-							
+
+	<!-- Displaying the message of empty cart if the number of cart items is zero  -->
 							</jstl:if>
-						<jstl:if test="${sessionScope.cartItems.size() == 0 }">
-							<section class="jumbotron text-center">
-								<div class="container">
-									<h1 class="jumbotron-heading">Your Cart is Empty</h1>
-								</div>
-							</section>
-						</jstl:if>
+							<jstl:if test="${sessionScope.cartItems.size() == 0 }">
+								<section class="jumbotron text-center">
+									<div class="container">
+										<h1 class="jumbotron-heading">Your Cart is Empty</h1>
+									</div>
+								</section>
+							</jstl:if>
 						</tbody>
 					</table>
 				</div>
 			</div>
 			<br>
+
 			<div class="col mb-4">
 				<div class="row">
 					<div class="col-sm-15  col-md-9">
-					
+
 						<a class="btn btn-block btn-light" href="refresh.app">Continue
 							Shopping</a>
 					</div>
@@ -128,7 +132,7 @@ body {
 		</div>
 	</div>
 
-		<jsp:include page="footer.jsp"></jsp:include>
+	<jsp:include page="footer.jsp"></jsp:include>
 
 </body>
 </html>
